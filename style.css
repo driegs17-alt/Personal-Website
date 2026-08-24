@@ -1,67 +1,135 @@
+:root {
+  --forest-green: #1f3a2e;
+  --forest-green-light: #315442;
+  --off-white: #f7f3ea;
+  --tan: #dccdb8;
+  --tan-light: #eee6d8;
+  --text: #253128;
+  --muted-text: #586158;
+  --border: #cfc3b1;
+}
+
 body {
   max-width: 800px;
   margin: 60px auto;
   padding: 0 24px;
   font-family: Arial, sans-serif;
   line-height: 1.7;
-  color: #1a1a1a;
-  background-color: #ffffff;
+  color: var(--text);
+  background-color: var(--off-white);
+}
+
+.site-nav {
+  display: flex;
+  gap: 22px;
+  margin-bottom: 45px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.site-nav a {
+  color: var(--forest-green);
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: var(--forest-green-light);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 h1 {
   margin-bottom: 5px;
+  color: var(--forest-green);
   font-size: 48px;
+  letter-spacing: -1px;
 }
 
 h2 {
-  margin-top: 50px;
-  margin-bottom: 10px;
+  margin-top: 55px;
+  margin-bottom: 12px;
+  color: var(--forest-green);
   font-size: 28px;
 }
 
 h3 {
   margin-top: 0;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
+  color: var(--forest-green);
   font-size: 20px;
 }
 
 p {
   max-width: 680px;
-  color: #4a4a4a;
+  color: var(--muted-text);
 }
 
 a {
-  color: #1a1a1a;
+  color: var(--forest-green);
   font-weight: bold;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
 a:hover {
-  color: #555555;
+  color: var(--forest-green-light);
 }
 
 .intro {
   max-width: 650px;
+  color: var(--text);
   font-size: 20px;
 }
 
 .project,
 .skill {
   margin-top: 20px;
-  padding: 20px;
-  border: 1px solid #dddddd;
+  padding: 22px;
+  background-color: #ffffff;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--forest-green);
   border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(31, 58, 46, 0.06);
+}
+
+.project p,
+.skill p {
+  margin-bottom: 0;
 }
 
 .contact-links a {
+  display: inline-block;
   margin-right: 18px;
+  margin-bottom: 10px;
 }
 
 footer {
   margin-top: 70px;
   padding-top: 20px;
-  border-top: 1px solid #dddddd;
-  color: #777777;
+  border-top: 1px solid var(--border);
+  color: var(--muted-text);
   font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  body {
+    margin: 35px auto;
+    padding: 0 20px;
+  }
+
+  h1 {
+    font-size: 38px;
+  }
+
+  .site-nav {
+    gap: 14px;
+    margin-bottom: 35px;
+  }
+
+  .project,
+  .skill {
+    padding: 18px;
+  }
 }
