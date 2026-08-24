@@ -1,3 +1,4 @@
+/* Brand colors used across every page */
 :root {
   --forest-green: #1f3a2e;
   --forest-green-light: #315442;
@@ -7,22 +8,31 @@
   --text: #253128;
   --muted-text: #586158;
   --border: #cfc3b1;
+  --white: #ffffff;
 }
 
+/* Keeps padding and borders inside an element's total width */
+* {
+  box-sizing: border-box;
+}
+
+/* Basic page styling */
 body {
-  max-width: 800px;
-  margin: 60px auto;
+  max-width: 900px;
+  margin: 56px auto;
   padding: 0 24px;
-  font-family: Arial, sans-serif;
-  line-height: 1.7;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.65;
   color: var(--text);
   background-color: var(--off-white);
 }
 
+/* Navigation */
 .site-nav {
   display: flex;
-  gap: 22px;
-  margin-bottom: 45px;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 48px;
   padding-bottom: 16px;
   border-bottom: 1px solid var(--border);
 }
@@ -40,36 +50,38 @@ body {
   text-underline-offset: 4px;
 }
 
+/* Headings */
 h1 {
-  margin-bottom: 5px;
+  margin: 0 0 8px;
   color: var(--forest-green);
   font-size: 48px;
   letter-spacing: -1px;
+  line-height: 1.1;
 }
 
 h2 {
-  margin-top: 55px;
-  margin-bottom: 12px;
+  margin: 64px 0 14px;
   color: var(--forest-green);
   font-size: 28px;
+  line-height: 1.2;
 }
 
 h3 {
-  margin-top: 0;
-  margin-bottom: 6px;
+  margin: 0 0 8px;
   color: var(--forest-green);
-  font-size: 20px;
+  font-size: 21px;
+  line-height: 1.3;
 }
 
+/* Paragraphs and links */
 p {
-  max-width: 680px;
+  max-width: 700px;
   color: var(--muted-text);
 }
 
 a {
   color: var(--forest-green);
   font-weight: bold;
-  text-decoration: underline;
   text-underline-offset: 4px;
 }
 
@@ -77,59 +89,140 @@ a:hover {
   color: var(--forest-green-light);
 }
 
+/* Homepage / page-intro text */
 .intro {
-  max-width: 650px;
+  max-width: 680px;
   color: var(--text);
   font-size: 20px;
 }
 
+/* Small all-caps labels */
+.eyebrow,
+.project-label {
+  margin: 0 0 8px;
+  color: var(--forest-green-light);
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Project and skill cards */
 .project,
 .skill {
-  margin-top: 20px;
-  padding: 22px;
-  background-color: #ffffff;
+  margin-top: 24px;
+  padding: 24px;
+  background-color: var(--white);
   border: 1px solid var(--border);
-  border-left: 5px solid var(--forest-green);
+  border-left: 4px solid var(--forest-green);
   border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(31, 58, 46, 0.06);
 }
 
 .project p,
 .skill p {
-  margin-bottom: 0;
+  max-width: 720px;
 }
 
+.project-note {
+  color: var(--muted-text);
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* Image base rule: never stretch or overflow */
+.portfolio-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+/* Wide boards and landscape artwork fill the project card */
+.wide-image {
+  width: 100%;
+}
+
+/* Tall posters stay centered and do not take over the entire page */
+.poster-image {
+  width: auto;
+  max-height: 650px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Links in the contact row have comfortable spacing */
 .contact-links a {
   display: inline-block;
   margin-right: 18px;
   margin-bottom: 10px;
 }
 
+/* Simple button used for homepage calls to action */
+.button-link {
+  display: inline-block;
+  margin-right: 14px;
+  padding: 10px 16px;
+  color: var(--off-white);
+  background-color: var(--forest-green);
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.button-link:hover {
+  color: var(--off-white);
+  background-color: var(--forest-green-light);
+  text-decoration: none;
+}
+
+.text-link {
+  color: var(--forest-green);
+}
+
+/* Footer */
 footer {
-  margin-top: 70px;
+  margin-top: 72px;
   padding-top: 20px;
   border-top: 1px solid var(--border);
-  color: var(--muted-text);
   font-size: 14px;
 }
 
+footer p {
+  color: var(--muted-text);
+}
+
+/* Smaller screens */
 @media (max-width: 600px) {
   body {
-    margin: 35px auto;
-    padding: 0 20px;
+    margin: 32px auto;
+    padding: 0 18px;
+  }
+
+  .site-nav {
+    gap: 14px;
+    margin-bottom: 36px;
   }
 
   h1 {
     font-size: 38px;
   }
 
-  .site-nav {
-    gap: 14px;
-    margin-bottom: 35px;
+  h2 {
+    margin-top: 48px;
+    font-size: 25px;
+  }
+
+  .intro {
+    font-size: 18px;
   }
 
   .project,
   .skill {
     padding: 18px;
+  }
+
+  .poster-image {
+    max-height: 520px;
   }
 }
