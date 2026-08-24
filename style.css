@@ -226,3 +226,19 @@ footer p {
     max-height: 520px;
   }
 }
+
+.home-intro {
+  max-width: 780px;
+  padding-top: 36px;
+}
+
+.home-intro h1 {
+  max-width: 760px;
+  font-size: clamp(42px, 6vw, 68px);
+  letter-spacing: -2px;
+  line-height: 1.05;
+}
+
+.home-summary {
+  max-width: 700px;
+}
